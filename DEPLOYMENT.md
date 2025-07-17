@@ -1,4 +1,4 @@
-# 🚀 Hızlı Çekici - Production Deployment Guide
+# 🚀 Çekici Reklam Çalışması - Production Deployment Guide
 
 Bu rehber sayesinde Node.js + MongoDB çekici firması projenizi sunucunuza kolayca yükleyebilirsiniz.
 

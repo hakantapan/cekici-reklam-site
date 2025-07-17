@@ -7,6 +7,8 @@ const rateLimit = require('express-rate-limit');
 const compression = require('compression');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const { Server } = require('socket.io');
+const http = require('http');
 const path = require('path');
 require('dotenv').config();
 
@@ -21,23 +23,13 @@ const errorHandler = require('./src/middleware/errorHandler');
 const authMiddleware = require('./src/middleware/authMiddleware');
 
 const app = express();
-
-// Socket.io setup (only for non-Vercel environments)
-let server = app;
-let io = null;
-
-if (!process.env.VERCEL) {
-  const http = require('http');
-  const { Server } = require('socket.io');
-  
-  server = http.createServer(app);
-  io = new Server(server, {
-    cors: {
-      origin: process.env.CLIENT_URL || "http://localhost:3000",
-      methods: ["GET", "POST"]
-    }
-  });
-}
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: process.env.CLIENT_URL || "http://localhost:3000",
+    methods: ["GET", "POST"]
+  }
+});
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/towing-company', {
@@ -90,23 +82,21 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Socket.io for real-time updates (only for non-Vercel)
-if (io) {
-  io.on('connection', (socket) => {
-    console.log('👤 Kullanıcı bağlandı:', socket.id);
-    
-    socket.on('disconnect', () => {
-      console.log('👋 Kullanıcı ayrıldı:', socket.id);
-    });
-    
-    // Admin panel real-time updates
-    socket.on('join-admin', () => {
-      socket.join('admin-room');
-    });
+// Socket.io for real-time updates
+io.on('connection', (socket) => {
+  console.log('👤 Kullanıcı bağlandı:', socket.id);
+  
+  socket.on('disconnect', () => {
+    console.log('👋 Kullanıcı ayrıldı:', socket.id);
   });
-}
+  
+  // Admin panel real-time updates
+  socket.on('join-admin', () => {
+    socket.join('admin-room');
+  });
+});
 
-// Make io available to routes (null for Vercel)
+// Make io available to routes
 app.set('io', io);
 
 // Routes
@@ -126,16 +116,10 @@ app.use((req, res) => {
   });
 });
 
-// Vercel serverless için export
-if (process.env.VERCEL) {
-  module.exports = app;
-} else {
-  // Local development için server start
-  const PORT = process.env.PORT || 3000;
-  
-  server.listen(PORT, () => {
-    console.log(`🚀 Server ${PORT} portunda çalışıyor`);
-    console.log(`🌐 http://localhost:${PORT}`);
-    console.log(`⚡ Environment: ${process.env.NODE_ENV || 'development'}`);
-  });
-} 
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+  console.log(`🚀 Server ${PORT} portunda çalışıyor`);
+  console.log(`🌐 http://localhost:${PORT}`);
+  console.log(`⚡ Environment: ${process.env.NODE_ENV || 'development'}`);
+}); 

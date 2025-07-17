@@ -1,12 +1,10 @@
-# 🚛 Hızlı Çekici - Professional Towing Company Backend
+# 🚛 Çekici Reklam Çalışması - Professional Towing Company Backend
 
 Node.js + Express + MongoDB ile geliştirilmiş profesyonel çekici firması backend sistemi. İstanbul Avrupa Yakası'nda 7/24 çekici hizmeti için tam özellikli API ve admin panel.
 
-## 🚀 Quick Deploy to Vercel
+## 🚀 Quick Start
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/towing-company)
-
-**2 dakikada canlıya çıkar!** → [Vercel Deployment Rehberi](VERCEL_DEPLOY.md)
+**Node.js + Express + MongoDB** ile profesyonel çekici firması backend'i
 
 ## ✨ Features
 
@@ -55,14 +53,9 @@ Access:
 - **Site**: http://localhost:3000
 - **Admin**: http://localhost:3000/admin/login (admin/123456)
 
-### Vercel Deployment
+### Production Deployment
 
-1. **Fork this repo** on GitHub
-2. **Connect to Vercel**: https://vercel.com/new
-3. **Add Environment Variables** in Vercel dashboard
-4. **Deploy** automatically! ✨
-
-Detailed guide: [VERCEL_DEPLOY.md](VERCEL_DEPLOY.md)
+VPS sunucunuzda çalıştırmak için [DEPLOYMENT.md](DEPLOYMENT.md) rehberini takip edin.
 
 ## 🗂️ Project Structure
 
@@ -128,17 +121,12 @@ GET  /api/admin/export/calls   # Export call data
 
 ## 🌐 Deployment Options
 
-### Option 1: Vercel (Recommended)
-- ✅ **Free hosting** with global CDN
-- ✅ **Auto-scaling** and HTTPS
-- ✅ **Git integration** for CI/CD
-- ⚠️ Serverless limitations (no Socket.io)
-
-### Option 2: Traditional VPS
+### VPS Deployment (Recommended)
 - ✅ **Full control** with PM2
-- ✅ **Socket.io support** for real-time
+- ✅ **Socket.io support** for real-time features
 - ✅ **Custom domains** and SSL
-- 📋 Guide: [DEPLOYMENT.md](DEPLOYMENT.md)
+- ✅ **Database flexibility** (MongoDB/PostgreSQL)
+- 📋 Detaylı rehber: [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## 🗄️ Database Schema
 
@@ -218,7 +206,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Documentation**: Check docs/ folder
 - **Issues**: GitHub Issues
-- **Deployment**: [VERCEL_DEPLOY.md](VERCEL_DEPLOY.md)
 - **Server Setup**: [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## 🎯 Use Cases

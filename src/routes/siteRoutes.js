@@ -164,9 +164,9 @@ router.post('/track-call', asyncHandler(async (req, res) => {
     const callRecord = new CallTracking(callData);
     await callRecord.save();
 
-    // Real-time admin notification (only for non-Vercel)
+    // Real-time admin notification
     const io = req.app.get('io');
-    if (io && !process.env.VERCEL) {
+    if (io) {
       io.to('admin-room').emit('new-call', {
         type: callType,
         phone: phoneNumber,

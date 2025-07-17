@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Hızlı Çekici - Production Deployment"
+echo "🚀 Çekici Reklam Çalışması - Production Deployment"
 echo "======================================"
 
 # Renk kodları
