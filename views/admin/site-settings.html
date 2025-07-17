@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Ayarları - Hızlı Çekici Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body admin-dashboard">
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="admin-header-content">
+            <div class="admin-logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 17h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2Z"/>
+                        <path d="M3 10h18v7H3z"/>
+                        <path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Hızlı Çekici Admin</span>
+            </div>
+            
+            <nav class="admin-nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="site-settings.html" class="nav-link active">Site Ayarları</a>
+                <a href="areas.html" class="nav-link">Bölgeler</a>
+                <a href="statistics.html" class="nav-link">İstatistikler</a>
+                <button class="logout-btn" onclick="logout()">Çıkış</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="page-header">
+            <h1 class="page-title">Site Ayarları</h1>
+            <p class="page-subtitle">Web sitenizin içeriğini ve iletişim bilgilerini düzenleyin</p>
+        </div>
+
+        <!-- Settings Form -->
+        <div class="content-card">
+            <div class="card-header">
+                <h2 class="card-title">Genel Ayarlar</h2>
+                <button class="card-action" onclick="window.open('index.html', '_blank')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15,3 21,3 21,9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                    Siteyi Görüntüle
+                </button>
+            </div>
+            
+            <form id="siteSettingsForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="companyName" class="form-label">Şirket Adı</label>
+                        <input 
+                            type="text" 
+                            id="companyName" 
+                            name="companyName" 
+                            class="form-input"
+                            placeholder="Şirket adınızı girin"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phoneNumber" class="form-label">Telefon Numarası</label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber" 
+                            class="form-input"
+                            placeholder="+90 555 123 45 67"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="whatsappNumber" class="form-label">WhatsApp Numarası</label>
+                        <input 
+                            type="tel" 
+                            id="whatsappNumber" 
+                            name="whatsappNumber" 
+                            class="form-input"
+                            placeholder="905551234567 (+ işareti olmadan)"
+                            required
+                        >
+                        <small style="color: #6b7280; font-size: 0.75rem;">Not: + işareti kullanmayın, ülke koduyla birlikte yazın</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emailAddress" class="form-label">E-posta Adresi (Opsiyonel)</label>
+                        <input 
+                            type="email" 
+                            id="emailAddress" 
+                            name="emailAddress" 
+                            class="form-input"
+                            placeholder="info@hizlicekici.com"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="heroTitle" class="form-label">Ana Başlık (Hero)</label>
+                    <input 
+                        type="text" 
+                        id="heroTitle" 
+                        name="heroTitle" 
+                        class="form-input"
+                        placeholder="İstanbul'un En Hızlı Çekici Hizmeti"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="heroSubtitle" class="form-label">Ana Alt Başlık</label>
+                    <textarea 
+                        id="heroSubtitle" 
+                        name="heroSubtitle" 
+                        class="form-input"
+                        rows="3"
+                        placeholder="Araç arızası mı yaşıyorsunuz? Kaza mı geçirdiniz? Ortalama 15 dakikada yanınızdayız."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="serviceHours" class="form-label">Hizmet Saatleri</label>
+                        <input 
+                            type="text" 
+                            id="serviceHours" 
+                            name="serviceHours" 
+                            class="form-input"
+                            placeholder="7/24 Hizmet"
+                            value="7/24 Hizmet"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="responseTime" class="form-label">Ortalama Varış Süresi</label>
+                        <input 
+                            type="text" 
+                            id="responseTime" 
+                            name="responseTime" 
+                            class="form-input"
+                            placeholder="15 dk"
+                            value="15 dk"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="experience" class="form-label">Deneyim Süresi</label>
+                        <input 
+                            type="text" 
+                            id="experience" 
+                            name="experience" 
+                            class="form-input"
+                            placeholder="12 Yıl"
+                            value="12 Yıl"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerCount" class="form-label">Müşteri Sayısı</label>
+                        <input 
+                            type="text" 
+                            id="customerCount" 
+                            name="customerCount" 
+                            class="form-input"
+                            placeholder="10K+"
+                            value="10K+"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 1rem;">Hizmetler</h3>
+                    
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="service1" name="services" value="arac-cekme" checked class="checkbox">
+                            <label for="service1" class="checkbox-label" style="flex: 1;">
+                                <strong>Araç Çekme:</strong> Arızalı, kazalı veya çalışmayan araçlarınızı güvenle istediğiniz yere taşıyoruz.
+                            </label>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="service2" name="services" value="yol-yardimi" checked class="checkbox">
+                            <label for="service2" class="checkbox-label" style="flex: 1;">
+                                <strong>Yol Yardımı:</strong> Lastik değişimi, akü takviyesi, yakıt ikmali gibi acil yol yardım hizmetleri.
+                            </label>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="service3" name="services" value="kaza-yardimi" checked class="checkbox">
+                            <label for="service3" class="checkbox-label" style="flex: 1;">
+                                <strong>Kaza Yardımı:</strong> Trafik kazası durumunda araçlarınızı güvenle kaldırıp taşıma hizmeti sunuyoruz.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: flex-end; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='dashboard.html'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5"/>
+                            <path d="M12 19l-7-7 7-7"/>
+                        </svg>
+                        İptal
+                    </button>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                            <polyline points="17,21 17,13 7,13 7,21"/>
+                            <polyline points="7,3 7,8 15,8"/>
+                        </svg>
+                        Ayarları Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Additional Settings -->
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="card-title">SEO Ayarları</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="metaTitle" class="form-label">Meta Title</label>
+                    <input 
+                        type="text" 
+                        id="metaTitle" 
+                        name="metaTitle" 
+                        class="form-input"
+                        placeholder="Hızlı Çekici - İstanbul'un En Hızlı Çekici Hizmeti"
+                        maxlength="60"
+                    >
+                    <small style="color: #6b7280; font-size: 0.75rem;">Önerilen: 50-60 karakter</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="metaDescription" class="form-label">Meta Description</label>
+                    <textarea 
+                        id="metaDescription" 
+                        name="metaDescription" 
+                        class="form-input"
+                        rows="3"
+                        placeholder="İstanbul'da 7/24 acil çekici hizmeti. Ortalama 15 dakikada yanınızdayız. Araç çekme, yol yardımı ve kaza yardımı."
+                        maxlength="160"
+                    ></textarea>
+                    <small style="color: #6b7280; font-size: 0.75rem;">Önerilen: 150-160 karakter</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="keywords" class="form-label">Anahtar Kelimeler</label>
+                    <input 
+                        type="text" 
+                        id="keywords" 
+                        name="keywords" 
+                        class="form-input"
+                        placeholder="çekici, oto çekici, istanbul çekici, araç çekme, yol yardımı"
+                    >
+                    <small style="color: #6b7280; font-size: 0.75rem;">Virgülle ayırın</small>
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick="saveSEOSettings()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17,21 17,13 7,13 7,21"/>
+                        <polyline points="7,3 7,8 15,8"/>
+                    </svg>
+                    SEO Ayarlarını Kaydet
+                </button>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="card-title">Hızlı İşlemler</h2>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <button class="btn btn-primary" onclick="previewSite()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Siteyi Önizle
+                    </button>
+                    
+                    <button class="btn btn-secondary" onclick="exportSettings()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Ayarları Dışa Aktar
+                    </button>
+                    
+                    <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17,8 12,3 7,8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        Ayarları İçe Aktar
+                    </button>
+                    <input type="file" id="importFile" style="display: none;" accept=".json" onchange="importSettings(event)">
+                    
+                    <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 0.5rem 0;">
+                    
+                    <button class="btn btn-danger" onclick="resetSettings()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="1,4 1,10 7,10"/>
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                        </svg>
+                        Varsayılan Ayarlara Dön
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="dashboard.html" class="mobile-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            Dashboard
+        </a>
+        <a href="site-settings.html" class="mobile-nav-item active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+            </svg>
+            Ayarlar
+        </a>
+        <a href="areas.html" class="mobile-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Bölgeler
+        </a>
+        <a href="statistics.html" class="mobile-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/>
+                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+            </svg>
+            İstatistik
+        </a>
+    </nav>
+
+    <script src="admin.js"></script>
+    <script>
+        function saveSEOSettings() {
+            const data = getAdminData();
+            if (!data) return;
+            
+            const seoData = {
+                metaTitle: document.getElementById('metaTitle').value,
+                metaDescription: document.getElementById('metaDescription').value,
+                keywords: document.getElementById('keywords').value
+            };
+            
+            data.seoSettings = seoData;
+            saveAdminData(data);
+            showSuccessMessage('SEO ayarları kaydedildi!');
+        }
+        
+        function previewSite() {
+            window.open('index.html', '_blank');
+        }
+        
+        function exportSettings() {
+            const data = getAdminData();
+            if (!data) return;
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `site-ayarlari-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        function importSettings(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    if (confirm('Mevcut ayarlar değişecek. Devam etmek istiyor musunuz?')) {
+                        localStorage.setItem('adminData', JSON.stringify(importedData));
+                        location.reload();
+                    }
+                } catch (error) {
+                    alert('Dosya formatı hatalı!');
+                }
+            };
+            reader.readAsText(file);
+        }
+        
+        function resetSettings() {
+            if (confirm('Tüm ayarlar varsayılan değerlere dönecek. Bu işlem geri alınamaz. Devam etmek istiyor musunuz?')) {
+                localStorage.removeItem('adminData');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html> 

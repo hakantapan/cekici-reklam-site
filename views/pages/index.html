@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hızlı Çekici - İstanbul'un En Hızlı Çekici Hizmeti</title>
+    <meta name="description" content="İstanbul'da 7/24 acil çekici hizmeti. Ortalama 15 dakikada yanınızdayız. Araç çekme, yol yardımı ve kaza yardımı.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 17h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2Z"/>
+                            <path d="M3 10h18v7H3z"/>
+                            <path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Hızlı Çekici</span>
+                </div>
+                <!-- Desktop phone button -->
+                <button class="btn btn-primary header-phone-desktop" onclick="handleCall()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    +90 555 123 45 67
+                </button>
+                <!-- Mobile phone button -->
+                <button class="btn btn-primary header-phone-mobile" onclick="handleCall()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    7/24 Acil Hizmet
+                </div>
+                <h1 class="hero-title">
+                    İstanbul'un En Hızlı
+                    <span class="text-accent"> Çekici Hizmeti</span>
+                </h1>
+                <p class="hero-description">
+                    Araç arızası mı yaşıyorsunuz? Kaza mı geçirdiniz? Ortalama 15 dakikada yanınızdayız.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="handleCall()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Hemen Ara: +90 555 123 45 67
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="handleWhatsApp()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        WhatsApp Yardım Hattı
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">15 dk</div>
+                        <div class="stat-label">Ortalama Varış</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Mutlu Müşteri</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">12 Yıl</div>
+                        <div class="stat-label">Deneyim</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hizmetlerimiz</h2>
+                <p class="section-description">
+                    Modern ekipmanlarımız ve deneyimli ekibimizle her türlü araç sorununuza çözüm sunuyoruz.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <div class="service-image-placeholder">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 17h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2Z"/>
+                                <path d="M3 10h18v7H3z"/>
+                                <path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 17h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2Z"/>
+                                    <path d="M3 10h18v7H3z"/>
+                                    <path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
+                                </svg>
+                            </div>
+                            <h3 class="service-title">Araç Çekme</h3>
+                        </div>
+                        <p class="service-description">Arızalı, kazalı veya çalışmayan araçlarınızı güvenle istediğiniz yere taşıyoruz.</p>
+                        <button class="btn btn-outline service-btn" onclick="handleCall()">Hemen Ara</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <div class="service-image-placeholder">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4.22 4.22l15.56 15.56m-9.06-9.06a3 3 0 1 0 4.24 4.24"/>
+                                <path d="M10.5 4.5h7v7l-7-7Z"/>
+                                <path d="M7 17h6l-3-6-3 6Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4.22 4.22l15.56 15.56m-9.06-9.06a3 3 0 1 0 4.24 4.24"/>
+                                    <path d="M10.5 4.5h7v7l-7-7Z"/>
+                                    <path d="M7 17h6l-3-6-3 6Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="service-title">Yol Yardımı</h3>
+                        </div>
+                        <p class="service-description">Lastik değişimi, akü takviyesi, yakıt ikmali gibi acil yol yardım hizmetleri.</p>
+                        <button class="btn btn-outline service-btn" onclick="handleCall()">Hemen Ara</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <div class="service-image-placeholder">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="service-title">Kaza Yardımı</h3>
+                        </div>
+                        <p class="service-description">Trafik kazası durumunda araçlarınızı güvenle kaldırıp taşıma hizmeti sunuyoruz.</p>
+                        <button class="btn btn-outline service-btn" onclick="handleCall()">Hemen Ara</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="why-choose-grid">
+                <div class="why-choose-content">
+                    <h2 class="section-title">Neden Bizi Seçmelisiniz?</h2>
+                    <p class="why-choose-description">
+                        12 yıllık deneyimimiz ve profesyonel ekibimizle İstanbul'da güvenilir çekici hizmeti sunuyoruz.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="feature-title">Hızlı Müdahale</h4>
+                                <p class="feature-description">Aramanızdan sonra ortalama 15 dakikada olay yerine ulaşıyoruz.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="feature-title">Güvenli Taşıma</h4>
+                                <p class="feature-description">Araçlarınız tam sigortalı ve güvenli şekilde taşınır.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22,4 12,14.01 9,11.01"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="feature-title">Deneyimli Ekip</h4>
+                                <p class="feature-description">10+ yıllık tecrübeli ve sertifikalı çekici operatörleri.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-choose-image">
+                    <div class="image-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hizmet Bölgelerimiz</h2>
+                <p class="section-description">İstanbul Avrupa Yakası'nda geniş hizmet ağımızla yanınızdayız</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Bağcılar Oto Çekici</h3>
+                    <p class="area-description">Bağcılar ve çevresinde 7/24 çekici hizmeti</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Kağıthane Oto Çekici</h3>
+                    <p class="area-description">Kağıthane bölgesinde hızlı müdahale</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Beyoğlu Oto Çekici</h3>
+                    <p class="area-description">Beyoğlu merkez ve çevresinde hizmet</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Şişli Oto Çekici</h3>
+                    <p class="area-description">Şişli ve Mecidiyeköy bölgesinde</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Beşiktaş Oto Çekici</h3>
+                    <p class="area-description">Beşiktaş ve Ortaköy bölgesinde</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Bakırköy Oto Çekici</h3>
+                    <p class="area-description">Bakırköy ve Ataköy bölgesinde</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Fatih Oto Çekici</h3>
+                    <p class="area-description">Fatih ve Eminönü bölgesinde</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Beylikdüzü Oto Çekici</h3>
+                    <p class="area-description">Beylikdüzü ve çevresinde</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Avcılar Oto Çekici</h3>
+                    <p class="area-description">Avcılar ve Küçükçekmece'de</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Bahçelievler Oto Çekici</h3>
+                    <p class="area-description">Bahçelievler ve çevresinde</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Sarıyer Oto Çekici</h3>
+                    <p class="area-description">Sarıyer ve Maslak bölgesinde</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Esenyurt Oto Çekici</h3>
+                    <p class="area-description">Esenyurt ve Büyükçekmece'de</p>
+                    <button class="btn btn-outline area-btn" onclick="handleCall()">Hemen Ara</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA -->
+    <section class="emergency-cta">
+        <div class="container">
+            <div class="emergency-content">
+                <h2 class="emergency-title">Acil Durum mu?</h2>
+                <p class="emergency-description">Panik yapmayın! Hemen arayın, yanınızdayız.</p>
+                <button class="btn btn-white btn-lg" onclick="handleCall()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    +90 555 123 45 67
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-title">Telefon</h3>
+                    <p class="contact-main">+90 555 123 45 67</p>
+                    <p class="contact-sub">7/24 Açık</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-title">Hizmet Alanı</h3>
+                    <p class="contact-main">Tüm İstanbul</p>
+                    <p class="contact-sub">Avrupa & Anadolu Yakası</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-title">Çalışma Saatleri</h3>
+                    <p class="contact-main">7/24 Hizmet</p>
+                    <p class="contact-sub">Hafta içi & Hafta sonu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Sticky Call Button -->
+    <div class="mobile-sticky-btn">
+        <button class="btn btn-primary mobile-call-btn" onclick="handleCall()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            HEMEN ARA: +90 555 123 45 67
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 17h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2Z"/>
+                                <path d="M3 10h18v7H3z"/>
+                                <path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Hızlı Çekici</span>
+                    </div>
+                    <p class="footer-description">
+                        İstanbul'un en güvenilir çekici hizmeti. 12 yıllık deneyimimizle yanınızdayız.
+                    </p>
+                    <button class="btn btn-primary" onclick="handleCall()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Hemen Ara
+                    </button>
+                </div>
+
+                <div class="footer-services">
+                    <h4 class="footer-title">Hizmetler</h4>
+                    <ul class="footer-list">
+                        <li>Araç Çekme</li>
+                        <li>Yol Yardımı</li>
+                        <li>Kaza Yardımı</li>
+                        <li>Lastik Değişimi</li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-title">İletişim</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>+90 555 123 45 67</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Tüm İstanbul</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                            <span>7/24 Hizmet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Hızlı Çekici. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmet Bölgeleri - Hızlı Çekici Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body admin-dashboard">
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="admin-header-content">
+            <div class="admin-logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 17h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2Z"/>
+                        <path d="M3 10h18v7H3z"/>
+                        <path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Hızlı Çekici Admin</span>
+            </div>
+            
+            <nav class="admin-nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="site-settings.html" class="nav-link">Site Ayarları</a>
+                <a href="areas.html" class="nav-link active">Bölgeler</a>
+                <a href="statistics.html" class="nav-link">İstatistikler</a>
+                <button class="logout-btn" onclick="logout()">Çıkış</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="page-header">
+            <h1 class="page-title">Hizmet Bölgeleri</h1>
+            <p class="page-subtitle">İstanbul'da hizmet verdiğiniz bölgeleri yönetin</p>
+        </div>
+
+        <!-- Add New Area -->
+        <div class="content-card">
+            <div class="card-header">
+                <h2 class="card-title">Yeni Bölge Ekle</h2>
+            </div>
+            
+            <form id="areaForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="areaName" class="form-label">Bölge Adı</label>
+                        <input 
+                            type="text" 
+                            id="areaName" 
+                            name="areaName" 
+                            class="form-input"
+                            placeholder="Örn: Zeytinburnu Oto Çekici"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="areaDescription" class="form-label">Açıklama</label>
+                        <input 
+                            type="text" 
+                            id="areaDescription" 
+                            name="areaDescription" 
+                            class="form-input"
+                            placeholder="Örn: Zeytinburnu ve çevresinde hızlı hizmet"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                    <button type="reset" class="btn btn-secondary">Temizle</button>
+                    <button type="submit" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 5v14"/>
+                            <path d="M5 12h14"/>
+                        </svg>
+                        Bölge Ekle
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Existing Areas -->
+        <div class="content-card">
+            <div class="card-header">
+                <h2 class="card-title">Mevcut Bölgeler</h2>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button class="card-action" onclick="exportAreas()">Dışa Aktar</button>
+                    <select class="form-input" style="width: auto; padding: 0.5rem;" onchange="filterAreas(this.value)">
+                        <option value="all">Tümü</option>
+                        <option value="active">Aktif</option>
+                        <option value="inactive">Pasif</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="areasContainer">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Bölgeler yükleniyor...
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="dashboard.html" class="mobile-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            Dashboard
+        </a>
+        <a href="site-settings.html" class="mobile-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+            </svg>
+            Ayarlar
+        </a>
+        <a href="areas.html" class="mobile-nav-item active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Bölgeler
+        </a>
+        <a href="statistics.html" class="mobile-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/>
+                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+            </svg>
+            İstatistik
+        </a>
+    </nav>
+
+    <script src="admin.js"></script>
+    <script>
+        function filterAreas(status) {
+            const areas = document.querySelectorAll('.area-item');
+            areas.forEach(area => {
+                const isActive = area.textContent.includes('Aktif');
+                if (status === 'all' || 
+                    (status === 'active' && isActive) || 
+                    (status === 'inactive' && !isActive)) {
+                    area.style.display = 'flex';
+                } else {
+                    area.style.display = 'none';
+                }
+            });
+        }
+        
+        function exportAreas() {
+            const data = getAdminData();
+            if (!data) return;
+            
+            const csvContent = [
+                'Bölge Adı,Açıklama,Durum',
+                ...data.serviceAreas.map(area => 
+                    `"${area.name}","${area.description}","${area.active ? 'Aktif' : 'Pasif'}"`
+                )
+            ].join('\n');
+            
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `hizmet_bolgeleri_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html> 
