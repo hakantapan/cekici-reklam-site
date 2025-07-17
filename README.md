@@ -1,226 +1,238 @@
-# Hızlı Çekici - Landing Page
+# 🚛 Hızlı Çekici - Professional Towing Company Backend
 
-Bu proje, bir çekici şirketi için tasarlanmış modern ve responsive bir landing page'dir. Vanilla HTML, CSS ve JavaScript kullanılarak kodlanmıştır.
+Node.js + Express + MongoDB ile geliştirilmiş profesyonel çekici firması backend sistemi. İstanbul Avrupa Yakası'nda 7/24 çekici hizmeti için tam özellikli API ve admin panel.
 
-## 🚛 Özellikler
+## 🚀 Quick Deploy to Vercel
 
-- **Responsive Tasarım**: Mobil, tablet ve masaüstü uyumlu
-- **Modern UI/UX**: Temiz ve kullanıcı dostu arayüz
-- **Hızlı Yükleme**: Optimize edilmiş kod ve minimum bağımlılık
-- **SEO Uyumlu**: Semantik HTML ve meta etiketler
-- **Erişilebilirlik**: WCAG standartlarına uygun
-- **Animasyonlar**: Smooth scroll ve hover efektleri
-- **Mobil Optimizasyonu**: Sticky call button ve touch-friendly design
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/towing-company)
 
-## 📁 Dosya Yapısı
+**2 dakikada canlıya çıkar!** → [Vercel Deployment Rehberi](VERCEL_DEPLOY.md)
 
-```
-.
-├── index.html          # Ana HTML dosyası
-├── styles.css          # CSS stilleri
-├── script.js           # JavaScript fonksiyonları
-├── README.md          # Bu dosya
-├── SETUP.md           # Görsel ekleme kılavuzu
-├── admin.html         # Admin panel giriş sayfası
-├── dashboard.html     # Admin dashboard
-├── site-settings.html # Site ayarları sayfası
-├── areas.html         # Hizmet bölgeleri yönetimi
-├── statistics.html    # İstatistikler ve raporlar
-├── admin.css          # Admin panel CSS stilleri
-├── admin.js           # Admin panel JavaScript
-└── hero-background.jpg # Hero arkaplan görseli (eklenecek)
-```
+## ✨ Features
 
-## 🎛️ Admin Panel
+- **🔐 Admin Panel**: Secure authentication with JWT
+- **📊 Real-time Dashboard**: Live statistics and call tracking
+- **📱 Mobile Responsive**: Perfect on all devices
+- **🗄️ MongoDB Integration**: Atlas cloud database support
+- **🔒 Security**: Rate limiting, CSRF protection, password hashing
+- **⚡ Performance**: Optimized for speed and scalability
+- **🌐 SEO Friendly**: Auto sitemap, meta tags
+- **📈 Analytics**: Call tracking and conversion metrics
 
-Siteniz artık güçlü bir **admin panel** ile birlikte geliyor!
+## 🛠️ Tech Stack
 
-### 📊 Admin Panel Özellikleri:
-- **Login Sistemi**: Güvenli giriş (demo: admin/123456)
-- **Dashboard**: İstatistikler ve hızlı işlemler
-- **Site Ayarları**: İçerik düzenleme, telefon numarası değiştirme
-- **Hizmet Bölgeleri**: Bölge ekleme/çıkarma/düzenleme
-- **İstatistikler**: Telefon/WhatsApp tıklama raporları
-- **Responsive**: Mobil uyumlu tasarım
+- **Backend**: Node.js + Express.js
+- **Database**: MongoDB (Atlas recommended)
+- **Authentication**: JWT + Sessions
+- **Template Engine**: EJS
+- **Security**: Helmet, CORS, bcrypt
+- **Deployment**: Vercel (serverless) / PM2 (traditional)
 
-### 🔐 Giriş Bilgileri:
-- **URL**: `admin.html`
-- **Kullanıcı Adı**: `admin`
-- **Şifre**: `123456`
+## 📋 Quick Start
 
-### 📱 Mobil Uyumluluk:
-- Mobil navigasyon
-- Touch-friendly arayüz
-- Responsive dashboard
-- Mobil optimized formlar
+### Local Development
 
-## 🎨 Tasarım Özellikleri
+```bash
+# Clone repository
+git clone https://github.com/YOUR_USERNAME/towing-company.git
+cd towing-company
 
-### Renk Paleti
-- **Ana Renk**: #268835 (Yeşil)
-- **Metin**: #1f2937 (Koyu Gri)
-- **Arka Plan**: #ffffff (Beyaz) / #f9fafb (Açık Gri)
-- **Vurgu**: #86efac (Açık Yeşil)
+# Install dependencies
+npm install
 
-### Tipografi
-- **Font**: Inter (Google Fonts)
-- **Boyutlar**: Responsive font scaling
-- **Ağırlık**: 400, 500, 600, 700, 800
+# Setup environment
+cp env.vercel.example .env
+# Edit .env with your MongoDB connection
 
-## 📱 Responsive Breakpoints
+# Seed database
+npm run seed
 
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-
-## 🚀 Kurulum ve Kullanım
-
-1. **Dosyaları İndirin**
-   ```bash
-   # Bu dosyaları bilgisayarınıza kaydedin:
-   # - index.html
-   # - styles.css
-   # - script.js
-   ```
-
-2. **Tarayıcıda Açın**
-   ```bash
-   # index.html dosyasını çift tıklayarak açın
-   # veya bir web sunucusu kullanın
-   ```
-
-3. **Web Sunucusu ile Çalıştırma (Opsiyonel)**
-   ```bash
-   # Python ile
-   python -m http.server 8000
-   
-   # Node.js ile
-   npx http-server
-   
-   # PHP ile
-   php -S localhost:8000
-   ```
-
-## ⚙️ Özelleştirme
-
-### Telefon Numarası Değiştirme
-`script.js` dosyasında telefon numarasını güncelleyin:
-```javascript
-const phoneNumber = "+90 555 123 45 67"; // Buraya kendi numaranızı yazın
+# Start development server
+npm run dev
 ```
 
-### WhatsApp Numarası Değiştirme
-`script.js` dosyasında WhatsApp numarasını güncelleyin:
-```javascript
-const whatsappNumber = "905551234567"; // + işareti olmadan
+Access:
+- **Site**: http://localhost:3000
+- **Admin**: http://localhost:3000/admin/login (admin/123456)
+
+### Vercel Deployment
+
+1. **Fork this repo** on GitHub
+2. **Connect to Vercel**: https://vercel.com/new
+3. **Add Environment Variables** in Vercel dashboard
+4. **Deploy** automatically! ✨
+
+Detailed guide: [VERCEL_DEPLOY.md](VERCEL_DEPLOY.md)
+
+## 🗂️ Project Structure
+
+```
+├── server.js              # Main Express server
+├── vercel.json            # Vercel configuration
+├── package.json           # Dependencies
+│
+├── src/
+│   ├── models/            # MongoDB schemas
+│   ├── routes/            # Express routes
+│   ├── middleware/        # Authentication & security
+│   └── config/            # Database connection
+│
+├── views/                 # EJS templates
+│   ├── pages/            # Public pages
+│   └── admin/            # Admin panel
+│
+├── public/               # Static assets
+│   ├── css/             # Stylesheets
+│   ├── js/              # Client-side scripts
+│   └── images/          # Images
+│
+├── scripts/             # Utility scripts
+└── docs/               # Documentation
 ```
 
-### Şirket Bilgilerini Değiştirme
-`index.html` dosyasında şirket adını ve diğer bilgileri güncelleyin:
-```html
-<span class="logo-text">Hızlı Çekici</span> <!-- Şirket adı -->
+## 🔌 API Endpoints
+
+### Public APIs
+```
+GET  /api/settings              # Site configuration
+GET  /api/service-areas         # Active service areas
+POST /track-call               # Call tracking
 ```
 
-### Renkleri Özelleştirme
-`styles.css` dosyasında ana rengi değiştirin:
-```css
-/* Ana yeşil rengi değiştirmek için bu değerleri arayın ve değiştirin */
-background-color: #268835; /* Yeni renginiz */
+### Admin APIs (Auth Required)
+```
+GET  /admin/dashboard          # Admin dashboard
+PUT  /api/admin/settings       # Update settings
+POST /api/admin/service-areas  # Manage service areas
+GET  /api/admin/export/calls   # Export call data
 ```
 
-## 📋 Bölümler
+## 🔐 Security Features
 
-1. **Header**: Logo ve telefon butonu
-2. **Hero**: Ana banner ve CTA butonları
-3. **Hizmetler**: Araç çekme, yol yardımı, kaza yardımı
-4. **Neden Biz**: Avantajlar ve özellikler
-5. **Hizmet Bölgeleri**: İstanbul Avrupa Yakası ilçeleri
-6. **Acil CTA**: Acil durum çağrısı
-7. **İletişim**: İletişim bilgileri
-8. **Footer**: Alt bilgiler
+- **JWT Authentication** with secure sessions
+- **Password Hashing** using bcrypt
+- **Rate Limiting** to prevent abuse
+- **CSRF Protection** for forms
+- **Input Validation** on all inputs
+- **SQL Injection Protection** via Mongoose
+- **XSS Protection** with security headers
 
-## 📱 Mobil Özellikler
+## 📊 Admin Panel Features
 
-- Sticky header navigation
-- Mobil optimized buttons
-- Touch-friendly interface
-- Mobil sticky call button
-- Responsive typography
-- Optimized images
+- **📈 Dashboard**: Real-time statistics
+- **⚙️ Site Settings**: Content management
+- **🗺️ Service Areas**: Geographic coverage
+- **📞 Call Tracking**: Lead monitoring
+- **📋 Reports**: Data export and analytics
+- **👤 User Management**: Admin accounts
 
-## 🖼️ Hero Arkaplan Görseli
+## 🌐 Deployment Options
 
-Kendi çekici kamyonu görselinizi hero bölümünde kullanabilirsiniz:
+### Option 1: Vercel (Recommended)
+- ✅ **Free hosting** with global CDN
+- ✅ **Auto-scaling** and HTTPS
+- ✅ **Git integration** for CI/CD
+- ⚠️ Serverless limitations (no Socket.io)
 
-- Görselinizi `hero-background.jpg` olarak kaydedin
-- Önerilen boyut: 1920x1080 piksel
-- Maksimum dosya boyutu: 500KB
-- Detaylı kılavuz için `SETUP.md` dosyasına bakın
+### Option 2: Traditional VPS
+- ✅ **Full control** with PM2
+- ✅ **Socket.io support** for real-time
+- ✅ **Custom domains** and SSL
+- 📋 Guide: [DEPLOYMENT.md](DEPLOYMENT.md)
 
-## 🎯 JavaScript Fonksiyonları
+## 🗄️ Database Schema
 
-- **handleCall()**: Telefon arama
-- **handleWhatsApp()**: WhatsApp yönlendirme
-- **Scroll animasyonları**: Intersection Observer
-- **Header gizleme**: Scroll-based
-- **Loading states**: Button feedback
-- **Emergency notification**: 2 dakika sonra uyarı
+### Collections
+- **Users**: Admin authentication
+- **SiteSettings**: Dynamic configuration (singleton)
+- **ServiceAreas**: Geographic coverage with SEO
+- **CallTracking**: Lead tracking and analytics
 
-## 🌐 Browser Desteği
+### Indexes
+- Optimized queries for performance
+- Geographic indexing for service areas
+- Time-based indexing for analytics
 
-- ✅ Chrome 60+
-- ✅ Firefox 60+
-- ✅ Safari 12+
-- ✅ Edge 79+
-- ✅ Mobile browsers
+## 📱 Mobile Features
 
-## 🔧 Geliştirme Notları
+- **Responsive Design** for all screen sizes
+- **Touch-Friendly** admin interface
+- **Fast Loading** with optimized assets
+- **Progressive Enhancement** for offline
 
-### Performance Optimizations
-- CSS Grid ve Flexbox kullanımı
-- Minimal JavaScript
-- Optimized animations
-- Lazy loading hazır altyapısı
+## 🔍 SEO Optimization
 
-### Accessibility Features
-- Semantic HTML
-- ARIA labels
-- Keyboard navigation
-- High contrast support
-- Reduced motion support
+- **Dynamic Meta Tags** from database
+- **Auto-Generated Sitemap** XML
+- **Robots.txt** configuration
+- **Structured Data** for rich snippets
+- **Performance Optimized** for Core Web Vitals
 
-### SEO Features
-- Meta tags
-- Semantic structure
-- Alt texts
-- Fast loading
+## 📈 Analytics & Tracking
 
-## 📞 İletişim Özellikleri
+- **Call Tracking**: Phone and WhatsApp clicks
+- **Geographic Analytics**: Service area performance
+- **Conversion Metrics**: Lead-to-call tracking
+- **Admin Dashboard**: Real-time statistics
+- **Export Functions**: CSV and Excel reports
 
-- **Telefon Arama**: `tel:` protokolü ile direk arama
-- **WhatsApp**: Hazır mesajla WhatsApp yönlendirme
-- **Click-to-call**: Mobil cihazlarda dokunmatik arama
+## 🛠️ Development
 
-## 🎨 Ekstra Özellikler
+### Local Setup
+```bash
+# Development mode with nodemon
+npm run dev
 
-- Smooth scrolling
-- Hover animations
-- Loading states
-- Emergency notifications
-- Local storage preferences
-- Analytics ready (Google Analytics)
+# Run tests
+npm test
 
-## 📝 Lisans
+# Database seed
+npm run seed
 
-Bu proje açık kaynak kodludur ve kişisel/ticari kullanım için serbesttir.
+# Production build
+npm start
+```
 
-## 🤝 Katkıda Bulunma
+### Environment Variables
+```env
+NODE_ENV=development
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/towing-company
+JWT_SECRET=your-jwt-secret
+SESSION_SECRET=your-session-secret
+```
 
-1. Hataları bildirin
-2. Özellik önerileri yapın
-3. Code review yapın
-4. Dokümantasyonu geliştirin
+## 🤝 Contributing
+
+1. **Fork the repository**
+2. **Create feature branch**: `git checkout -b feature/new-feature`
+3. **Commit changes**: `git commit -m 'Add new feature'`
+4. **Push to branch**: `git push origin feature/new-feature`
+5. **Submit pull request**
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- **Documentation**: Check docs/ folder
+- **Issues**: GitHub Issues
+- **Deployment**: [VERCEL_DEPLOY.md](VERCEL_DEPLOY.md)
+- **Server Setup**: [DEPLOYMENT.md](DEPLOYMENT.md)
+
+## 🎯 Use Cases
+
+Perfect for:
+- **Towing Companies** 🚛
+- **Emergency Services** 🚨
+- **Local Businesses** 🏪
+- **Service Providers** 🔧
+
+Easily customizable for any service-based business!
 
 ---
 
-**Not**: Bu landing page template'ini farklı sektörler için de kolayca uyarlayabilirsiniz. İletişim bilgileri ve içerikleri değiştirerek kendi işiniz için kullanabilirsiniz. 
+**Made with ❤️ for professional towing services**
+
+⭐ **Star this repo** if you find it useful! 
